@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hariharan M - Engineering Graduate | Web Developer | IoT Enthusiast">
+    <meta name="keywords" content="Hariharan M, Web Developer, IoT, Database Management, Python, Java, C++">
+    <meta name="author" content="Hariharan M">
+    <title>Hariharan M - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <style>
+        /* Custom Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color:linear ;
+        }
+
+        #hero {
+            background: url('./image/profile/portfolio.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(51, 47, 45, 0.849);
+        }
+
+        #hero.text-center {
+            margin-top: 500px;
+        }
+        #about
+        {
+            background:url("./image/banner/banner1.jpg");
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+        }
+        #about .about {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            transition:cubic-bezier(0.445, 0.05, 0.55, 0.95)
+        }
+
+        #about .img {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-position: center;
+            position: relative;
+            background-size: cover;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        #about .img img {
+            position: relative;
+        }
+
+            #about p {
+            margin: 20px 50px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-weight: 500;
+            font-style: italic;
+            font-size: larger;
+        }
+
+        #skills p {
+            text-align: center;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #skills {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            background: url('./image/banner/skillset.jpg');
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+        }
+         #skills img{
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+            background-position: center;
+            background-size: cover;
+            justify-content: center;
+         }
+         #skills .logo{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+         #projects{
+            background:url("./image/banner/project.webp");
+            border-radius: 10px;
+                }
+        #experience .p,
+        #experience .h3 {
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .typing-effect {
+            overflow: hidden;
+            border-right: .15em solid white;
+            white-space: nowrap;
+            animation: typing 3s steps(40, end), blink-caret .75s step-end infinite;
+        }
+
+        @keyframes typing {
+            from {
+                width: 0
+            }
+
+            to {
+                width: 100%
+            }
+        }
+
+        @keyframes blink-caret {
+
+            from,
+            to {
+                border-color: transparent
+            }
+
+            50% {
+                border-color: white
+            }
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .particle-bg {
+            position: relative;
+            z-index: 1;
+        }
+
+        .particle-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: -1;
+        }
+
+        .image-frame {
+            width: 100%;
+            height: 200px;
+            background: #f0f0f0;
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: #aaa;
+            cursor: pointer;
+        }
+
+        .image-frame:hover {
+            background: #e0e0e0;
+            border-color: #aaa;
+        }
+
+        /* Media Queries for Responsive Design */
+
+/* Small Devices (Phones) */
+@media (max-width: 640px) {
+    #hero {
+        height: 80vh;
+        padding: 1.5rem;
+        background-size: cover;
+    }
+
+    #hero h1 {
+        font-size: 2rem;
+    }
+
+    #hero p {
+        font-size: 1rem;
+    }
+
+    #about {
+        text-align: center;
+        padding: 1.5rem;
+    }
+
+    #about .img {
+        width: 120px;
+        height: 120px;
+    }
+
+    #skills {
+        padding: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .hover-scale {
+        transform: none;
+    }
+}
+
+/* Medium Devices (Tablets) */
+@media (min-width: 641px) and (max-width: 1024px) {
+    #hero {
+        height: 85vh;
+        padding: 2rem;
+    }
+
+    #hero h1 {
+        font-size: 2.5rem;
+    }
+
+    #hero p {
+        font-size: 1.2rem;
+    }
+
+    #about {
+        padding: 2rem;
+    }
+
+    #about .img {
+        width: 140px;
+        height: 140px;
+    }
+
+    #skills {
+        padding: 2rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Large Devices (Desktops) */
+@media (min-width: 1025px) {
+    #hero {
+        height: 100vh;
+        padding: 3rem;
+    }
+
+    #hero h1 {
+        font-size: 3.5rem;
+    }
+
+    #hero p {
+        font-size: 1.5rem;
+    }
+
+    #about {
+        padding: 3rem;
+    }
+
+    #about .img {
+        width: 160px;
+        height: 160px;
+    }
+
+    #skills {
+        padding: 3rem;
+    }
+
+    .grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold animate__animated animate__bounce font-amsterdam four hover-scale" style="text-decoration-line:underline ">HARIHARAN M</h1>
+            <p class="text-2xl mt-4"
+                style="color: rgb(255, 255, 255);font-weight: bold; text-decoration-line:underline ;text-decoration: blacks bg-transparent border-2 border-white  rounded-full ;">
+                Engineering Graduate | Web Developer | IoT Enthusiast</p>
+            <p class="typing-effect mt-4" style="color: rgb(255, 255, 255); font-size: 25px; font-weight: bold;">
+                "Empower through design."</p>
+            <div class="mt-8">
+                <button onclick="scrollToSection('projects')"
+                    class="bg-white text-blue-600 px-6 py-2 rounded-full mr-4 hover-scale">View My Work</button>
+                <button onclick="scrollToSection('contact')"
+                    class="bg-transparent border-2 border-white text-white px-6 py-2 rounded-full hover-scale">Contact
+                    Me</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" >
+        <h2 class="text-4xl font-bold text-center mb-8 hover-scale" style="text-decoration: underline;">About Me</h2>
+        <div class="about" >
+            <div class="img">
+                <img src="./image/profile/portfolio-profile.jpg" alt="portfolio-profile">
+            </div>
+            <p>
+                I am currently pursuing an under Graduate on ECE and i am very much passion about web development, IoT systems, and database management. I strive to build robust, scalable solutions that drive growth and efficiency in dynamic organizations. My expertise spans frontend/backend development, embedded systems, and real-time data processing.
+          </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="container mx-auto px-3 ">
+            <h2 class="text-4xl font-bold text-center mb-8 hover-scale " style="text-decoration-line: underline;color: white;">Skills</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 ">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/html.jpg" alt="logo">
+                    <p class="text-lg mt-2">"HTML"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/css.jpg" alt="logo">
+                    <p class="text-lg mt-2">"CSS" & "TAILWIND"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/js.png" alt="logo">
+                    <p class="text-lg mt-2">"JavaScript"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/firebase.png" alt="logo">
+                    <p class="text-lg mt-2">"Firebase"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/emailjs.png" alt="logo">
+                    <p class="text-lg mt-2">"EmailJS"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    
+                    <img src="./image/icon/java.webp" alt="logo">
+                    <p class="text-lg mt-2">"JAVA"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/c.png" alt="logo">
+                    <p class="text-lg mt-2">"C"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/c++.jpg" alt="logo">
+                    <p class="text-lg mt-2">"C++"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    
+                    <img src="./image/icon/gpt.webp" alt="logo">
+                    <p class="text-lg mt-2">"Promptcraft"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/canva.jpg" alt="logo">
+                    <p class="text-lg mt-2">"Canva"</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform logo">
+                    <img src="./image/icon/arduino.jpg" alt="logo">
+                    <p class="text-lg mt-2">"Arduino"</p>
+                </div>
+                 
+            </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-gray-100";>
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-8 hover-scale " style="text-decoration: underline; color: white;">Projects</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform">
+                    <div class="image-frame"
+                        style="background-image: url('./image/project/database.jpg'); background-position: center;background-size: cover;">
+                    </div>
+                    <h3 class="text-xl font-bold mt-4 mb-2">Database Management Web Application</h3>
+                    <p class="text-gray-700">
+                        Developed a database management web application using HTML, CSS, JavaScript, and Firebase,
+                        ensuring real-time data storage and retrieval with 95% synchronization accuracy. Optimized
+                        frontend-backend integration, reducing load times by 40% and improving responsiveness.
+                    </p>
+                    <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-full hover-scale">View Details</button>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover-scale transition-transform">
+                    <div class="image-frame"
+                        style="background-image: url('./image/project/dustbin.jpg'); background-position: center;background-size: cover;">
+                    </div>
+                    <h3 class="text-xl font-bold mt-4 mb-2">IoT-Based Dustbin Quantity Monitoring System</h3>
+                    <p class="text-gray-700">
+                        Built an IoT-based dustbin monitoring system using ultrasonic sensors and ESP32, achieving 95%
+                        accuracy in fill-level measurement. Implemented MQTT/HTTP protocols for real-time updates via
+                        the Bling app, optimizing waste collection schedules.
+                    </p>
+                    <button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded-full hover-scale">View Details</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20" style="background:url('./image/banner/professtional1.png');background-repeat: no-repeat; background-position: center;background-size: cover;border-radius: 10px;">
+        <div class="container mx-auto px-4 font-sans">
+            <h2 class="text-4xl font-bold text-center mb-8 hover-scale" style="text-decoration: underline; color:white">Professional Experience
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item bg-white p-6 rounded-lg shadow-md mb-8 hover-scale  text-align: center">
+                    <h3 class="text-xl font-bold  font-sans text-center">Web Development Intern | INTECHPLUS SYSTEMS
+                    </h3>
+                    <p style="text-align: center">Gained experience in HTML, CSS, JavaScript, and Firebase, enhancing
+                        skills in frontend development, backend integration, and database management while optimizing
+                        performance and improving real-time data processing.</p>
+                </div>
+                <div class="timeline-item bg-white p-6 rounded-lg shadow-md mb-8 hover-scale text-center">
+                    <h3 class="text-xl font-bold">IoT Intern | GATEWAY SOFTWARE SOLUTIONS</h3>
+                    <p class="text-gray-700 font-sans">Worked with Arduino and ESP32 boards, integrating sensors like
+                        ultrasonic, gas, IR, temperature, and humidity, along with actuators such as motors, servos, and
+                        relays. Optimized system performance using MQTT and HTTP protocols, improving communication
+                        efficiency by 80%.</p>
+                </div>
+                <div class="timeline-item bg-white p-6 rounded-lg shadow-md hover-scale text-center">
+                    <h3 class="text-xl font-bold">Inplant Training | Bharat Sanchar Nigam Limited (BSNL)</h3>
+                    <p class="text-gray-700 font-Semibold">Developed a strong understanding of GSM architecture, signal
+                        transmission processes, and key components such as the Mobile Station (MS), Base Station
+                        Subsystem (BSS), and Network Subsystem. Gained knowledge of GSM signaling, call routing, and
+                        network management.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="py-20 bg-gray-100" style="background: url('./image/banner/acheivement.jpg'); border-radius: 10px; justify-content: center;">
+        <div class="container mx-auto px-4" style="justify-content: center;">
+            <h2 class="text-4xl font-bold text-center mb-8 hover-scale" style="text-decoration: underline;">Achievements & Volunteering</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8" style="justify-content: center;">
+                <div class="p-6 rounded-lg shadow-md hover-scale" style="background-color: #ffffffcc;">
+                    <h3 class="text-xl font-bold">NCC Achievement</h3>
+                    <p class="text-gray-700">
+                        Recognized as the Best Cadet for leading a team of 30 peers through training exercises and
+                        organizing international programs like Rangutsav and the Russian Cultural Fest. Contributed to
+                        improved team performance, morale, and successful execution of key activities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 particle-bg" style="border-radius: 10px;">
+        <div class="container mx-auto px-4" >
+            <h2 class="text-4xl font-bold text-center mb-8 hover-scale" style="text-decoration: underline;">Contact Me</h2>
+            <form id="contact-form" class="max-w-lg mx-auto">
+                <input type="text" id="name" placeholder="Name"
+                    class="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:border-blue-600 hover-scale" required>
+                <input type="email" id="email" placeholder="Email"
+                    class="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:border-blue-600 hover-scale" required>
+                <textarea id="message" placeholder="Message"
+                    class="w-full px-4 py-2 mb-4 border rounded-lg focus:outline-none focus:border-blue-600 hover-scale"
+                    required></textarea>
+                <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded-full hover-scale">Send
+                    Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Scroll To Section Function
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // GSAP Animations
+        gsap.from(".hero", { opacity: 0, duration: 1, y: -50, ease: "power2.out" });
+        gsap.from("#about", { opacity: 0, duration: 1, y: 50, scrollTrigger: "#about" });
+        gsap.from("#skills", { opacity: 0, duration: 1, x: -50, scrollTrigger: "#skills" });
+        gsap.from("#projects", { opacity: 0, duration: 1, x: 50, scrollTrigger: "#projects" });
+        gsap.from("#experience", { opacity: 0, duration: 1, y: 50, scrollTrigger: "#experience" });
+        gsap.from("#achievements", { opacity: 0, duration: 1, y: -50, scrollTrigger: "#achievements" });
+        gsap.from("#contact", { opacity: 0, duration: 1, y: 50, scrollTrigger: "#contact" });
+
+    (function () {
+        emailjs.init("DVgYXvELES2FguNUw"); // Replace with your EmailJS user ID
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const serviceID = "service_1234567"; // Replace with your EmailJS service ID
+        const templateID = "portfolio_123456"; // Replace with your EmailJS template ID
+
+        const templateParams = {
+            name: document.getElementById('name').value,
+            email: document.getElementById('email').value,
+            message: document.getElementById('message').value
+        };
+
+        emailjs.send(serviceID, templateID, templateParams)
+            .then(response => {
+                alert('Message sent successfully!');
+                document.getElementById('contact-form').reset();
+            })
+            .catch(error => {
+                console.error("Error sending email: ", error);
+                alert('An error occurred. Please try again.');
+            });
+    });
+  
+</script>
+
+</body>
+</html>
